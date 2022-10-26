@@ -16,9 +16,12 @@ return new class extends Migration
         Schema::create('Catalogo', function (Blueprint $table) {
             $table->increments('idCatalogo');
             $table->string('nombreCuenta');
-            $table->integer('idTipoCatalogo');
-            $table->integer('idEmpresa');
-            $table->integer('idCuentaPuente');
+            $table->unsignedBigInteger('idTipoCatalogo');
+            $table->foreign('idTipoCatalogo')->references('id')->on('Catalogo');
+            $table->unsignedBigInteger('idEmpresa');
+            $table->foreign('idEmpresa')->references('id')->on('Empresa');
+            $table->unsignedBigInteger('idCuentaPuente');
+            $table->foreign('idCuentaPuente')->references('id')->on('CuentaPuente');
             $table->timestamps();
         });
     }

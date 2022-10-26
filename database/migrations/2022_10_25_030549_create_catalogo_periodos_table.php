@@ -14,8 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('CatalogoPeriodo', function (Blueprint $table) {
-            $table->integer('idCatalogo');
-            $table->integer('idPC');
+            $table->increments('id');
+            $table->unsignedBigInteger('idCatalogo');
+            $table->foreign('idCatalogo')->references('id')->on('Catalogo')->onDelete('cascade');
+            $table->unsignedBigInteger('idPC');
+            $table->foreign('idPC')->references('id')->on('PeriodoContable')->onDelete('cascade');
             $table->decimal('saldo', $precision = 12, $scale = 2);
             $table->timestamps();
         });

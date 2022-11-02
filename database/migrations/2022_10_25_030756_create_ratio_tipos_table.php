@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('RatioTipo', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('idRT');
             $table->unsignedBigInteger('idTipoEmpresa');
             $table->foreign('idTipoEmpresa')->references('id')->on('TipoEmpresa')->onDelete('cascade');
             $table->unsignedBigInteger('idRatio');

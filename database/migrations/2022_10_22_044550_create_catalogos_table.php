@@ -17,11 +17,11 @@ return new class extends Migration
             $table->increments('idCatalogo');
             $table->string('nombreCuenta');
             $table->unsignedBigInteger('idTipoCatalogo');
-            $table->foreign('idTipoCatalogo')->references('id')->on('Catalogo');
+            $table->foreign('idTipoCatalogo')->references('idTipoCatalogo')->on('TipoCatalogo');
             $table->unsignedBigInteger('idEmpresa');
-            $table->foreign('idEmpresa')->references('id')->on('Empresa');
+            $table->foreign('idEmpresa')->references('idEmpresa')->on('Empresa');
             $table->unsignedBigInteger('idCuentaPuente');
-            $table->foreign('idCuentaPuente')->references('id')->on('CuentaPuente');
+            $table->foreign('idCuentaPuente')->references('idCuentaPuente')->on('CuentaPuente');
             $table->timestamps();
         });
     }

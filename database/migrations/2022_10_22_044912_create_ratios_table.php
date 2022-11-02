@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('Ratio', function (Blueprint $table) {
             $table->increments('idRatio');
-            $table->integer('idEmpresa');
+            $table->unsignedBigInteger('idEmpresa');
+            $table->foreign('idEmpresa')->references('idEmpresa')->on('Empresa');
             $table->string('nombreRatio');
             $table->decimal('valorGeneralRatio', $precision = 12, $scale = 2);
             $table->timestamps();

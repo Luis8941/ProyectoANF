@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('Ratio', function (Blueprint $table) {
-            $table->increments('idRatio');
+            $table->increments('id');
             $table->unsignedBigInteger('idEmpresa');
-            $table->foreign('idEmpresa')->references('idEmpresa')->on('Empresa');
+            $table->foreign('idEmpresa')->references('id')->on('Empresa');
             $table->string('nombreRatio');
             $table->decimal('valorGeneralRatio', $precision = 12, $scale = 2);
             $table->timestamps();

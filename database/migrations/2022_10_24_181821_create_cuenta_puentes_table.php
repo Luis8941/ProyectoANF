@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('CuentaPuente', function (Blueprint $table) {
-            $table->increments('idCuentaPuente');
+            $table->increments('id');
             $table->timestamps();
         });
     }

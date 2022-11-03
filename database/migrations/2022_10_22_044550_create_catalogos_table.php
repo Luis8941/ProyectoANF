@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('Catalogo', function (Blueprint $table) {
-            $table->increments('idCatalogo');
+            $table->increments('id');
             $table->string('nombreCuenta');
             $table->unsignedBigInteger('idTipoCatalogo');
-            $table->foreign('idTipoCatalogo')->references('idTipoCatalogo')->on('TipoCatalogo');
+            $table->foreign('idTipoCatalogo')->references('id')->on('TipoCatalogo');
             $table->unsignedBigInteger('idEmpresa');
-            $table->foreign('idEmpresa')->references('idEmpresa')->on('Empresa');
+            $table->foreign('idEmpresa')->references('id')->on('Empresa');
             $table->unsignedBigInteger('idCuentaPuente');
-            $table->foreign('idCuentaPuente')->references('idCuentaPuente')->on('CuentaPuente');
+            $table->foreign('idCuentaPuente')->references('id')->on('CuentaPuente');
             $table->timestamps();
         });
     }

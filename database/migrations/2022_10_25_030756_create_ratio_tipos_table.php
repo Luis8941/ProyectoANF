@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('RatioTipo', function (Blueprint $table) {
-            $table->increments('idRT');
+            $table->increments('id');
             $table->unsignedBigInteger('idTipoEmpresa');
             $table->foreign('idTipoEmpresa')->references('id')->on('TipoEmpresa')->onDelete('cascade');
-            $table->unsignedBigInteger('idRatio');
+            $table->integer('idRatio');
             $table->foreign('idRatio')->references('id')->on('Ratio')->onDelete('cascade');
             $table->decimal('valorRatioTipo', $precision = 12, $scale = 2);
             $table->timestamps();

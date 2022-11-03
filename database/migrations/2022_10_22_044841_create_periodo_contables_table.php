@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('PeriodoContable', function (Blueprint $table) {
-            $table->increments('idPC');
+            $table->increments('id');
             $table->string('año');
             $table->string('desde');
             $table->string('hasta');

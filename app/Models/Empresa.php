@@ -10,7 +10,7 @@ class Empresa extends Model
     use HasFactory;
 
     protected $table= 'Empresa';
-    protected $primaryKey = 'idEmpresa';
+    protected $primaryKey = 'id';
     protected $fillable = ['nombre','sector'];
 
     public function catalogosE()

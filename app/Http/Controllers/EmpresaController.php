@@ -14,7 +14,8 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        return view('layouts.Empresa');
+        $empresas= Empresa::all();
+        return view('crud.empresa',compact('empresas'));
     }
 
     /**
@@ -24,7 +25,7 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        //
+        return view('crud.create');
     }
 
     /**
@@ -58,6 +59,7 @@ class EmpresaController extends Controller
     public function edit(Empresa $empresa)
     {
         //
+        return view('crud.edit');
     }
 
     /**

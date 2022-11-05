@@ -9,7 +9,7 @@ class TipoCatalogo extends Model
 {
     use HasFactory;
     protected $table= 'TipoCatalogo';
-    protected $primaryKey = 'idTipoCatalogo';
+    protected $primaryKey = 'id';
     protected $fillable = ['nomTipoCatalogo'];
 
     public function catalogosTC()

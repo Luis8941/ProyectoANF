@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Lista de Empresas')
+@section('title', 'Editar Empresas')
 
 @section('content_header')
-    <h1>EMPRESA</h1>
+    <h1>EDITAR EMPRESA</h1>
 @stop
 
 @section('content')
-    <p>Pantalla Inicial</p>
+    <p>Editar Empresa</p>
 @stop
 
 @section('css')

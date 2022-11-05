@@ -9,7 +9,7 @@ class Ratio extends Model
 {
     use HasFactory;
     protected $table= 'Ratio';
-    protected $primaryKey = 'idRatio';
+    protected $primaryKey = 'id';
     protected $fillable = ['nombreRatio','valorGeneralRatio'];
 
     public function tipoEmpresas()

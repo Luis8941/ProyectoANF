@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'dash',
+    'dashboard_url' => 'crud',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -312,11 +312,17 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Empresas',
-            'url'         => 'dash/empresa',
+            'text'        => 'Empresa',
             'icon'        => 'far fa-fw fa-building',
-            'label'       => null,
-            'label_color' => 'success',
+            'submenu' => [
+            [
+                'text' => 'Crear',
+                'url'  => 'crud/empresa/create',
+            ],
+            [
+                'text' => 'Empresas',
+                'url'  => 'crud/empresa',
+            ]],
         ],
         ['header' => 'Ratios Financieros'],
         [

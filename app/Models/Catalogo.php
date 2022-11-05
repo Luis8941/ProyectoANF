@@ -9,7 +9,7 @@ class Catalogo extends Model
 {
     use HasFactory;
     protected $table= 'Catalogo';
-    protected $primaryKey = 'idCatalogo';
+    protected $primaryKey = 'id';
     protected $fillable = ['nombreCuenta'];
 
     public function periodoscontables()

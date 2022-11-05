@@ -9,5 +9,6 @@ class CatalogoPeriodo extends Model
 {
     use HasFactory;
     protected $table= 'CatalogoPeriodo';
+    protected $primaryKey = 'id';
     protected $fillable = ['saldo','idCatalogo','idPC'];
 }

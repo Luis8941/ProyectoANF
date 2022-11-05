@@ -18,22 +18,14 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/dash/empresa', function () {
-    return view('crud.index');
-});
-
-Route::get('/dash/empresa/crear', function () {
-    return view('crud.create');
-});
-
-Route::get('empresa', [EmpresaController::class, 'index']);
+Route::resource('crud/empresa', EmpresaController::class)->names('crud.empresa');
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dash', function () {
-        return view('dash.index');
-    })->name('dash');
+    Route::get('/crud', function () {
+        return view('crud.index');
+    })->name('crud');
 });

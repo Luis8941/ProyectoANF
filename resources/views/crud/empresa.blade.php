@@ -7,6 +7,14 @@
 @stop
 
 @section('content')
+    @if (session('mensaje'))
+    <div class="alert alert-success">
+        <strong>{{session('mensaje')}}</strong>
+    </div>
+    @endif
+    <div class="card-header">
+        <a href="{{route('crud.empresa.create')}}" class="btn btn-primary">Nueva Empresa</a>
+    </div>
     <div class="card">
         <div class="card-body">
             <table class="table table-striped">

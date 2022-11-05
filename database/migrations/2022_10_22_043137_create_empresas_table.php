@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('Empresa', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre', 30);
-            $table->string('sector', 10);
+            $table->string('sector', 60);
             $table->timestamps();
         });
     }

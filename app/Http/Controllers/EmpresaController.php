@@ -34,9 +34,16 @@ class EmpresaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request)  //para guardar nuevo registro
     {
         //
+        $request->validate(
+            ['nombre'=>'required',
+            'sector'=>'required']
+        );
+
+        $empresa = Empresa::create($request->all());
+        return redirect()->route('crud.empresa.edit', $empresa)->with('mensaje','La empresa se registro con exito');
     }
 
     /**
@@ -59,7 +66,7 @@ class EmpresaController extends Controller
     public function edit(Empresa $empresa)
     {
         //
-        return view('crud.edit');
+        return view('crud.edit', compact('empresa'));
     }
 
     /**
@@ -72,6 +79,12 @@ class EmpresaController extends Controller
     public function update(Request $request, Empresa $empresa)
     {
         //
+        $request->validate(
+            ['nombre'=>'required',
+            'sector'=>'required']
+        );
+        $empresa->update($request->all());
+        return redirect()->route('crud.empresa.edit', $empresa)->with('mensaje','La empresa se actualizo con exito');
     }
 
     /**
@@ -83,5 +96,7 @@ class EmpresaController extends Controller
     public function destroy(Empresa $empresa)
     {
         //
+        $empresa->delete();
+        return redirect()->route('crud.empresa.index', $empresa)->with('mensaje','La empresa se elemino con exito');
     }
 }

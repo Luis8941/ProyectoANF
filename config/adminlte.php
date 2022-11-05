@@ -324,6 +324,16 @@ return [
                 'url'  => 'crud/empresa',
             ]],
         ],
+        [
+            'text'        => 'Catalogo',
+            'icon'        => 'far fa-fw fa-building',
+            'submenu' => [
+            [
+                'text' => 'Crear',
+                'url'  => 'catalogo/create',
+            ]
+        ],
+        ],
         ['header' => 'Ratios Financieros'],
         [
             'text' => 'profile',

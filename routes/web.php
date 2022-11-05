@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CatalogoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
 
@@ -19,6 +20,8 @@ Route::get('/', function () {
 });
 
 Route::resource('crud/empresa', EmpresaController::class)->names('crud.empresa');
+
+Route::resource('catalogo', CatalogoController::class)->names('catalogo');
 
 Route::middleware([
     'auth:sanctum',

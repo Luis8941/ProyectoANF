@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('RatioTipo', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedBigInteger('idTipoEmpresa');
+            $table->unsignedInteger('idTipoEmpresa');
             $table->foreign('idTipoEmpresa')->references('id')->on('TipoEmpresa')->onDelete('cascade');
-            $table->integer('idRatio');
+            $table->unsignedInteger('idRatio');
             $table->foreign('idRatio')->references('id')->on('Ratio')->onDelete('cascade');
             $table->decimal('valorRatioTipo', $precision = 12, $scale = 2);
             $table->timestamps();

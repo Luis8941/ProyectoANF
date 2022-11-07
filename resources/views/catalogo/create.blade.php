@@ -10,7 +10,7 @@
 
     <div class="card">
         <div class="card-body">
-            {!! Form::open(['route'=>'catalogo.store']) !!}
+            {!! Form::open(['route'=>'catalogo.import']) !!}
             <div class="form-group">
                 {!! Form::label('nombre', 'Seleccione Catalogo:') !!}
                 {!! Form::file('catalogo') !!}
@@ -19,7 +19,7 @@
                 @enderror
             </div>
 
-            {!! Form::submit('Guardar', ['class'=>'btn btn-primary']) !!}
+            {!! Form::submit('Importar', ['class'=>'btn btn-primary']) !!}
 
             {!! Form::close() !!}
         </div>

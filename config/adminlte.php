@@ -331,8 +331,11 @@ return [
             [
                 'text' => 'Crear',
                 'url'  => 'catalogo/create',
-            ]
-        ],
+            ],
+            [
+                'text' => 'Catalogo',
+                'url'  => 'catalogo',
+            ]],
         ],
         ['header' => 'Ratios Financieros'],
         [

@@ -6,6 +6,7 @@ use App\Models\CatalogoPeriodo;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\CatalogoPeriodoImport;
+use DB;
 
 class CatalogoPeriodoController extends Controller
 {
@@ -16,18 +17,11 @@ class CatalogoPeriodoController extends Controller
      */
     public function index()
     {
-        $catalogoPeriodos = CatalogoPeriodo::all();
+        $catalogoPeriodos = DB::table('CatalogoPeriodo')
+            ->join('Catalogo', 'CatalogoPeriodo.idCatalogo', '=', 'Catalogo.id')
+            ->select('CatalogoPeriodo.*', 'Catalogo.nombreCuenta')
+            ->get();
         return view('catalogoPeriodo.index', compact('catalogoPeriodos'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('catalogoPeriodo.create');
     }
 
     /**
@@ -35,7 +29,7 @@ class CatalogoPeriodoController extends Controller
     */
     public function import(Request $request) 
     {
-        Excel::import(new CatalogoPeriodoImport,$request->file('file'));
+        Excel::import(new CatalogoPeriodoImport,$request->file('balance'));
         return back();
     }
 }

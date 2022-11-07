@@ -337,6 +337,15 @@ return [
                 'url'  => 'catalogo',
             ]],
         ],
+        [
+            'text'        => 'Balance general',
+            'icon'        => 'far fa-fw fa-building',
+            'submenu' => [
+            [
+                'text' => 'Importar balance general',
+                'url'  => 'catalogoPeriodo',
+            ]],
+        ],
         ['header' => 'Ratios Financieros'],
         [
             'text' => 'profile',

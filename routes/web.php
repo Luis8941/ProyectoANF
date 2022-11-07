@@ -4,6 +4,7 @@ use App\Http\Controllers\CatalogoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\CatalogoPeriodoController;
+use App\Http\Controllers\WebsiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,13 @@ Route::get('/', function () {
 
 Route::resource('crud/empresa', EmpresaController::class)->names('crud.empresa');
 
-Route::resource('catalogo', CatalogoController::class)->names('catalogo');
+
+
+Route::controller(CatalogoController::class)->group(function(){
+    Route::get('catalogo', 'index');
+    Route::get('catalogos-export', 'export')->name('catalogo.export');
+    Route::post('catalogo-import', 'import')->name('catalogo.import');
+});
 
 Route::controller(CatalogoPeriodoController::class)->group(function(){
     Route::get('catalogoPeriodo', 'index');
@@ -36,6 +43,5 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/crud', function () {
-        return view('crud.index');
-    })->name('crud');
+        return view('crud.index');})->name('crud');
 });

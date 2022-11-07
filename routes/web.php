@@ -28,6 +28,12 @@ Route::get('/dash/empresa/crear', function () {
 
 Route::get('empresa', [EmpresaController::class, 'index']);
 
+Route::controller(CatalogoPeriodoControoler::class)->group(function(){
+    Route::get('catalogoPeriodo', 'index');
+    Route::post('catalogoPeriodo-import', 'import')->name('catalogoPeriodo.import');
+
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

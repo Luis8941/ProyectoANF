@@ -18,12 +18,11 @@ class CatalogoImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new Catalogo([
-            //
             'codigo'=>$row['codigo'],
-            'nombreCuenta'=>$row['nombreCuenta'],
-            'idTipoCatalogo'=>$row['idTipoCatalogo'],
-            'idEmpresa'=>$row['idEmpresa'],
-            'idCunetaPuente'=>$row['idCunetaPuente'],
+            'nombreCuenta'=>$row['nombrecuenta'],
+            'idTipoCatalogo'=>$row['idtipocatalogo'],
+            'idEmpresa'=>$row['idempresa'],
+            'idCuentaPuente'=>$row['idcuentapuente'],
         ]);
     }
 }

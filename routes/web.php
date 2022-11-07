@@ -3,6 +3,7 @@
 use App\Http\Controllers\CatalogoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\CatalogoPeriodoController;
 use App\Http\Controllers\WebsiteController;
 
 /*

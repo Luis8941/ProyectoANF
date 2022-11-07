@@ -31,12 +31,6 @@ Route::controller(CatalogoController::class)->group(function(){
     Route::post('catalogo-import', 'import')->name('catalogo.import');
 });
 
-Route::controller(CatalogoPeriodoController::class)->group(function(){
-    Route::get('catalogoPeriodo', 'index');
-    Route::post('catalogoPeriodo-import', 'import')->name('catalogoPeriodo.import');
-
-});
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

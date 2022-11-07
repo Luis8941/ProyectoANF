@@ -18,8 +18,8 @@ class CatalogoController extends Controller
      */
     public function index()
     {
-        //
-        return view('catalogo.create');
+        $catalogos = Catalogo::all();
+        return view('catalogo.create', compact('catalogos'));
     }
 
     /**
@@ -101,29 +101,10 @@ class CatalogoController extends Controller
     */
     public function import(Request $request)
     {
-        /* $request->validate([
-            'file' => 'required|max:10000|mimes:xlsx,xls',
+        $request->validate([
+            'catalogo' => 'required',
         ]);
-
-        $path = $request->file('catalogo')->getRealPath();
-
-            Excel::import(new CatalogoImport, $path,\Maatwebsite\Excel\Excel::XLSX);
-        Excel::import(new CatalogoImport,$request()->file('catalogo'));*/
-
-        if($request->hasFile('catalogo')){
-            $path = $request->file('catalogo')->getRealPath();
-            $datos = Excel::load($path, function($reader){
-            })->get();
-
-            if(!empty($datos) && $datos->count()){
-                $datos = $datos->toArray();
-                for($i=0; $i< count($datos); $i++){
-                    $datosImportar[] = $datos[$i];
-                }
-            }
-
-            Catalogo::insert($datosImportar);
-        }
+        Excel::import(new CatalogoImport,$request->file('catalogo'));
 
         return back();
     }

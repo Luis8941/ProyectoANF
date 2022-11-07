@@ -17,8 +17,8 @@ class CatalogoPeriodoImport implements ToModel, WithHeadingRow
     {
         return new CatalogoPeriodo([
             'saldo' => $row['saldo'],
-            'idCatalogo' => $row['idCatalogo'],
-            'idPC'  => $row['idPC'],
+            'idCatalogo' => $row['idcatalogo'],
+            'idPC'  => $row['idpc'],
         ]);
     }
 }

@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('CatalogoPeriodo', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedBigInteger('idCatalogo');
-            $table->foreign('idCatalogo')->references('id')->on('Catalogo')->onDelete('cascade');
-            $table->unsignedBigInteger('idPC');
-            $table->foreign('idPC')->references('id')->on('PeriodoContable')->onDelete('cascade');
+            $table->unsignedInteger('idCatalogo');
+            $table->unsignedInteger('idPC');
             $table->decimal('saldo', $precision = 12, $scale = 2);
             $table->timestamps();
+            $table->foreign('idCatalogo')->references('id')->on('Catalogo')->onDelete('cascade');
+            $table->foreign('idPC')->references('id')->on('PeriodoContable')->onDelete('cascade');
         });
     }
 

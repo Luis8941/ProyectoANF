@@ -10,7 +10,7 @@ class CuentaPuente extends Model
     use HasFactory;
 
     protected $table= 'CuentaPuente';
-    protected $primaryKey = 'idCuentaPuente';
+    protected $primaryKey = 'id';
 
     public function catalogosCP()
     {

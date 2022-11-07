@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('Catalogo', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('codigo');
             $table->string('nombreCuenta');
-            $table->unsignedBigInteger('idTipoCatalogo');
-            $table->foreign('idTipoCatalogo')->references('id')->on('TipoCatalogo');
-            $table->unsignedBigInteger('idEmpresa');
+            $table->unsignedInteger('idTipoCatalogo');
+            $table->foreign('idTipoCatalogo')->references('id')->on('Tipocatalogo');
+            $table->unsignedInteger('idEmpresa');
             $table->foreign('idEmpresa')->references('id')->on('Empresa');
-            $table->unsignedBigInteger('idCuentaPuente');
-            $table->foreign('idCuentaPuente')->references('id')->on('CuentaPuente');
+            $table->unsignedInteger('idCuentaPuente');
+            $table->foreign('idCuentaPuente')->references('id')->on('Cuentapuente');
             $table->timestamps();
         });
     }

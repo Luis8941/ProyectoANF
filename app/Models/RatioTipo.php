@@ -9,5 +9,6 @@ class RatioTipo extends Model
 {
     use HasFactory;
     protected $table= 'RatioTipo';
+    protected $primaryKey = 'id';
     protected $fillable = ['valorRatioTipo','idTipoEmpresa','idRatio'];
 }

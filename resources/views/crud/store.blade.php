@@ -1,18 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Lista de Empresas')
+@section('title', 'Editar Empresas')
 
 @section('content_header')
-    <h1>EMPRESA</h1>
+    <h1>STORE EMPRESA</h1>
 @stop
 
 @section('content')
-    @if (session('mensaje'))
-    <div class="alert alert-success">
-        <strong>{{session('mensaje')}}</strong>
-    </div>
-    @endif
-    <p>Pantalla Inicial</p>
+    <p>Store Empresa</p>
 @stop
 
 @section('css')

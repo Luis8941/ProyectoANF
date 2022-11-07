@@ -3,6 +3,7 @@
 use App\Http\Controllers\CatalogoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\CatalogoPeriodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::resource('crud/empresa', EmpresaController::class)->names('crud.empresa')
 
 Route::resource('catalogo', CatalogoController::class)->names('catalogo');
 
-Route::controller(CatalogoPeriodoControoler::class)->group(function(){
+Route::controller(CatalogoPeriodoController::class)->group(function(){
     Route::get('catalogoPeriodo', 'index');
     Route::post('catalogoPeriodo-import', 'import')->name('catalogoPeriodo.import');
 

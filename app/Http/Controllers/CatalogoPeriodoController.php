@@ -16,16 +16,26 @@ class CatalogoPeriodoController extends Controller
      */
     public function index()
     {
-        $catalogoPeriodos = CatalogoPeriodo::get();
-        return view('catalogoPeriodos', compact('catalogoPeriodos'));
+        $catalogoPeriodos = CatalogoPeriodo::all();
+        return view('catalogoPeriodo.index', compact('catalogoPeriodos'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('catalogoPeriodo.create');
     }
 
     /**
     * @return \Illuminate\Support\Collection
     */
-    public function import() 
+    public function import(Request $request) 
     {
-        Excel::import(new CatalogoPeriodoImport,request()->file('file'));
+        Excel::import(new CatalogoPeriodoImport,$request->file('file'));
         return back();
     }
 }
